@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>heart</title>
+  </head>
+  <style>
+    :root {
+      --sl: 30px;
+      --offset: -15px;
+    }
+    body {
+      background-color: #000;
+    }
+    @keyframes shine {
+      0% {
+        box-shadow: 0 0 0 0 #ff0000;
+        background-color: #ff0000;
+      }
+      50% {
+        box-shadow: 0 0 0 3px #ff0000;
+        background-color: #ff0000;
+      }
+      100% {
+        box-shadow: 0 0 0 0 #ff0000;
+        background-color: #ff0000;
+      }
+    }
+    #heart,
+    #heart:before,
+    #heart:after {
+      background-color: #fff;
+      animation: shine 1.5s ease-in-out infinite;
+    }
+    #heart {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: var(--sl);
+      height: var(--sl);
+      transform: rotate(45deg) translate(-50%, -50%);
+      border-radius: 3px;
+      border-bottom-right-radius: 0;
+    }
+    #heart:before,
+    #heart:after {
+      content: '';
+      position: absolute;
+      width: var(--sl);
+      height: var(--sl);
+      border-radius: 100%;
+    }
+    #heart:before {
+      bottom: 0;
+      left: var(--offset);
+    }
+    #heart:after {
+      right: 0;
+      top: var(--offset);
+    }
+  </style>
+  <body>
+    <div id="heart"></div>
+  </body>
+</html>
